@@ -13,5 +13,6 @@ func route(_pubGroup *gin.RouterGroup, _authGroup *gin.RouterGroup) {
 	// /account
 	{
 		account.HandleCurrent("/current", _authGroup)
+		account.HandleUpdate("/update", _authGroup)
 	}
 }

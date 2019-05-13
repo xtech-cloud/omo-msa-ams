@@ -39,16 +39,17 @@ func (AccountDAO) Insert(_account Account) error {
 	return db.Create(&_account).Error
 }
 
-/*
-func (AccountDAO) Upsert(_account Account) error {
-	var account Account
-	err := db.Where(Account{UUID: _account.UUID}).FirstOrCreate(&account).Error
+func (AccountDAO) UpdateProfile(_uuid string, _profile string) error {
+	db, err := openDB()
 	if nil != err {
 		return err
 	}
-	err = db.Model(&account).Updates(_account).Error
-	return err
+	defer closeDB(db)
+
+	return db.Model(&Account{}).Where("uuid = ?", _uuid).Update("profile", _profile).Error
 }
+
+/*
 
 func (AccountDAO) List() ([]Account, error) {
 	var accounts []Account

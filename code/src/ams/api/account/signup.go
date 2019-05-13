@@ -3,11 +3,8 @@ package account
 import (
 	"ams/http"
 	"ams/model"
-	"crypto/md5"
-	"fmt"
 
 	"github.com/gin-gonic/gin"
-	"github.com/satori/go.uuid"
 )
 
 type SignupRequest struct {
@@ -22,11 +19,11 @@ func HandleSignup(_uri string, _group *gin.RouterGroup) {
 
 		req := SignupRequest{}
 		err := _context.ShouldBind(&req)
-		http.TryRenderDatabaseError(_context, err)
+		http.TryRenderBindError(_context, err)
 
 		dao := model.NewAccountDAO()
 		account := model.Account{
-			UUID:     newGUID(),
+			UUID:     model.NewUUID(),
 			Username: req.Username,
 			Password: req.Password,
 			Profile:  "",
@@ -39,10 +36,4 @@ func HandleSignup(_uri string, _group *gin.RouterGroup) {
 		}
 		http.RenderOK(_context, rsp)
 	})
-}
-
-func newGUID() string {
-	uid, _ := uuid.NewV4()
-	hex := md5.Sum(uid.Bytes())
-	return fmt.Sprintf("%x", hex)
 }
