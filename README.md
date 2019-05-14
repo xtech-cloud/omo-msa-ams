@@ -110,11 +110,9 @@ export AMS_MYSQL_DATABASE=ams
 
 ```json
 {
-    "code":0, 
-    "message":"",
-    "data":{
-        "uuid":"0bc97a7ba9645b0a556803bf9e671002"
-    }
+    "code":200,
+    "expire":"2019-05-14T15:50:13+08:00",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTc4MjAyMTMsImlkIjoiNjg1ZDgxZWNjMDNlYzg0NzRmNGMyZWRhZmJhOGQzYzgiLCJvcmlnX2lhdCI6MTU1NzgxNjYxM30.JggbFwGDjIqo8UnvuUqOXEHnEg_Z6SJGrGXo7lg2V3s"
 }
 ```
 
@@ -122,7 +120,10 @@ export AMS_MYSQL_DATABASE=ams
 
 |参数名|类型|说明|
 |:-----  |:-----|:-----|
-| uuid| string | 账号UUID|
+| code| int| http状态码 （200代表正常）|
+| expire| string| token有效期|
+| token| string| jwt token|
+
 
 
 ## `/ams/auth/signout`
