@@ -183,7 +183,7 @@ curl -v -H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOj
   
 **请求方式：**
 
-- POST 
+- GET
 
 **范例**
 
