@@ -1,4 +1,4 @@
-# 简介
+# 简介 
 
 账户管理服务
 
@@ -57,6 +57,12 @@ export AMS_MYSQL_DATABASE=ams
 
 - POST 
 
+**范例**
+
+```bash
+curl -v -H "Content-Type:application/json" -X POST -d '{"username":"admin", "password":"admin"}' 127.0.0.1/ams/signup
+```
+
 **参数：** 
 
 |参数名|必选|类型|说明|
@@ -98,6 +104,12 @@ export AMS_MYSQL_DATABASE=ams
 
 - POST 
 
+**范例**
+
+```bash
+curl -v -H "Content-Type:application/json" -X POST -d '{"username":"admin", "password":"admin"}' 127.0.0.1/ams/signin
+```
+
 **参数：** 
 
 |参数名|必选|类型|说明|
@@ -136,6 +148,12 @@ export AMS_MYSQL_DATABASE=ams
 
 - POST 
 
+**范例**
+
+```bash
+curl -v -H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTc4MjAyMTMsImlkIjoiNjg1ZDgxZWNjMDNlYzg0NzRmNGMyZWRhZmJhOGQzYzgiLCJvcmlnX2lhdCI6MTU1NzgxNjYxM30.JggbFwGDjIqo8UnvuUqOXEHnEg_Z6SJGrGXo7lg2V3s" -H "Content-Type:application/json" -X POST 127.0.0.1/ams/auth/signout
+```
+
 **参数：** 
 
 |参数名|必选|类型|说明|
@@ -166,6 +184,12 @@ export AMS_MYSQL_DATABASE=ams
 **请求方式：**
 
 - POST 
+
+**范例**
+
+```bash
+curl -v -H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTc4MjAyMTMsImlkIjoiNjg1ZDgxZWNjMDNlYzg0NzRmNGMyZWRhZmJhOGQzYzgiLCJvcmlnX2lhdCI6MTU1NzgxNjYxM30.JggbFwGDjIqo8UnvuUqOXEHnEg_Z6SJGrGXo7lg2V3s" -H "Content-Type:application/json" -X POST 127.0.0.1/ams/auth/current
+```
 
 **参数：** 
 
@@ -204,6 +228,12 @@ export AMS_MYSQL_DATABASE=ams
 **请求方式：**
 
 - POST 
+
+**范例**
+
+```bash
+curl -v -H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTc4MjAyMTMsImlkIjoiNjg1ZDgxZWNjMDNlYzg0NzRmNGMyZWRhZmJhOGQzYzgiLCJvcmlnX2lhdCI6MTU1NzgxNjYxM30.JggbFwGDjIqo8UnvuUqOXEHnEg_Z6SJGrGXo7lg2V3s" -H "Content-Type:application/json" -X POST -d '{"profile":"{\"nickname\":\"admini\"}"}' 127.0.0.1/ams/auth/update
+```
 
 **参数：** 
 
