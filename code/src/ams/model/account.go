@@ -53,6 +53,16 @@ func (AccountDAO) UpdateProfile(_uuid string, _profile string) error {
 	return db.Model(&Account{}).Where("uuid = ?", _uuid).Update("profile", _profile).Error
 }
 
+func (AccountDAO) UpdatePassword(_uuid string, _password string) error {
+	db, err := openDB()
+	if nil != err {
+		return err
+	}
+	defer closeDB(db)
+
+	return db.Model(&Account{}).Where("uuid = ?", _uuid).Update("password", _password).Error
+}
+
 /*
 
 func (AccountDAO) List() ([]Account, error) {

@@ -44,6 +44,11 @@ export AMS_MYSQL_DATABASE=ams
 
 设置完环境变量后启动ams
 
+# 测试工具
+
+- PostMan
+使用PostMan导入doc/AMS.postman_collection.json
+
 
 # HTTP API
 
@@ -240,6 +245,40 @@ curl -v -H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOj
 |参数名|必选|类型|说明|
 |:----    |:---|:--- |:---   |
 |profile|是|string|简介|
+
+
+**返回示例**
+
+```json
+{
+    "code":0, 
+    "message":"",
+    "data":{
+    }
+}
+```
+
+## `/ams/auth/reset`
+
+**简要描述:**
+
+- 重置密码
+  
+**请求方式：**
+
+- POST 
+
+**范例**
+
+```bash
+curl -v -H "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTc4MjAyMTMsImlkIjoiNjg1ZDgxZWNjMDNlYzg0NzRmNGMyZWRhZmJhOGQzYzgiLCJvcmlnX2lhdCI6MTU1NzgxNjYxM30.JggbFwGDjIqo8UnvuUqOXEHnEg_Z6SJGrGXo7lg2V3s" -H "Content-Type:application/json" -X POST -d '{"password":"11223344"}' 127.0.0.1/ams/auth/reset
+```
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:--- |:---   |
+|password|是|string|新密码|
 
 
 **返回示例**

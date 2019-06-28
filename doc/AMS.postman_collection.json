@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "c7099117-5857-4bb0-bcd0-13a129f3cdc2",
+		"name": "AMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/ams/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin\"\r\n}"
+				},
+				"url": {
+					"raw": "{{domain}}/ams/signup",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"ams",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ams/signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin\"\r\n}"
+				},
+				"url": {
+					"raw": "{{domain}}/ams/signin",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"ams",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ams/auth/signout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/ams/auth/signout",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"ams",
+						"auth",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ams/auth/current",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/ams/auth/current",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"ams",
+						"auth",
+						"current"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ams/auth/update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"profile\":\"{\\\"nickname\\\":\\\"admin\\\"}\"\n}"
+				},
+				"url": {
+					"raw": "{{domain}}/ams/auth/update",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"ams",
+						"auth",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ams/auth/reset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\":\"admin\"\n}"
+				},
+				"url": {
+					"raw": "{{domain}}/ams/auth/reset",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"ams",
+						"auth",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
