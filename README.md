@@ -21,6 +21,15 @@ export AMS_LOG_FILE=/var/log/ams.log
 export AMS_LOG_LEVEL=INFO
 ```
 
+- 密码加密
+
+密码使用MD5加盐后存储，盐为用户名，可以设置环境变量为盐加后缀。
+
+```
+export AMS_SALT_SUFFIX=suffix
+```
+不设置变量，默认后缀为空
+
 - SQLite
 
 设置以下环境变量
@@ -96,7 +105,7 @@ curl -v -H "Content-Type:application/json" -X POST -d '{"username":"admin", "pas
 
 **备注**
 
-`ams直接存储收到的密码，不进行额外加密处理`
+`密码会进行MD5加盐后存储`
 
 
 ## `/ams/signin`
