@@ -25,7 +25,7 @@ func HandleSignup(_uri string, _group *gin.RouterGroup) {
 		account := model.Account{
 			UUID:     model.NewUUID(),
 			Username: req.Username,
-			Password: req.Password,
+			Password: dao.StrengthenPassword(req.Password, req.Username),
 			Profile:  "",
 		}
 		err = dao.Insert(account)

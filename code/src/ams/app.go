@@ -17,6 +17,7 @@ func main() {
 
 	core.Logger.Info("initialize model")
 
+	model.SetupEnv()
 	model.AutoMigrateDatabase()
 
 	httpAddrArg := os.Getenv("AMS_HTTP_ADDR")

@@ -52,12 +52,12 @@ func BindAuthHandler(_router *gin.Engine, _uri string, _group string) *gin.Route
 				return "", jwt.ErrMissingLoginValues
 			}
 
-			username := signinVals.Username
-			password := signinVals.Password
-
 			core.Logger.Info(signinVals)
 
 			dao := model.NewAccountDAO()
+			username := signinVals.Username
+			password := dao.StrengthenPassword(signinVals.Password, signinVals.Username)
+
 			accountVal, err := dao.WhereUsername(username)
 			if nil != err {
 				core.Logger.Error(err)

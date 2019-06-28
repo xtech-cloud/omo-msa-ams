@@ -25,6 +25,10 @@ func NewAccountDAO() *AccountDAO {
 	return &AccountDAO{}
 }
 
+func (AccountDAO) StrengthenPassword(_password string, _salt string) string {
+	return ToUUID(_password + _salt + saltSuffix)
+}
+
 func (AccountDAO) Insert(_account Account) error {
 	db, err := openDB()
 	if nil != err {

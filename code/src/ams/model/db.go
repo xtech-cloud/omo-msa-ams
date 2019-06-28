@@ -17,6 +17,11 @@ var base64Coder = base64.NewEncoding("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnop
 
 var dialectName string
 var dialectArgs string
+var saltSuffix string
+
+func SetupEnv() {
+	saltSuffix = os.Getenv("AMS_SALT_SUFFIX")
+}
 
 func AutoMigrateDatabase() {
 	dialectName = os.Getenv("AMS_DATABASE_DRIVER")
