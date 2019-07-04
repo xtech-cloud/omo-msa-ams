@@ -25,11 +25,6 @@ func main() {
 		httpAddrArg = ":80"
 	}
 
-	rpcAddrArg := os.Getenv("AMS_RPC_ADDR")
-	if "" == rpcAddrArg {
-		rpcAddrArg = ":10080"
-	}
-
 	router := gin.Default()
 
 	// 跨域调用

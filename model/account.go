@@ -8,14 +8,14 @@ import (
 
 type Account struct {
 	Embedded gorm.Model `gorm:"embedded"`
-	UUID     string     `gorm:"column:uuid;not null;unique"`
-	Username string     `gorm:"column:username;not null;unique"`
-	Password string     `gorm:"column:password;not null"`
-	Profile  string     `gorm:"column:profile"`
+	UUID     string     `gorm:"column:uuid;type:char(32);not null;unique"`
+	Username string     `gorm:"column:username;type:varchar(32);not null;unique"`
+	Password string     `gorm:"column:password;type:char(32);not null"`
+	Profile  string     `gorm:"column:profile;type:text"`
 }
 
 func (Account) TableName() string {
-	return "Account"
+	return "ams_account"
 }
 
 type AccountDAO struct {

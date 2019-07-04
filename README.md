@@ -2,8 +2,6 @@
 
 账户管理服务
 
-支持http和rpc两种调用方式
-
 # 编译
 
 进入omo-msa-ams目录，执行go build
@@ -16,7 +14,6 @@
 ```
 export GIN_MODE=release
 export AMS_HTTP_ADDR=:80
-export AMS_RPC_ADDR=:10080
 export AMS_LOG_FILE=/var/log/ams.log
 export AMS_LOG_LEVEL=INFO
 ```
@@ -48,7 +45,7 @@ export AMS_DATABASE_DRIVER=mysql
 export AMS_MYSQL_ADDR=127.0.0.1:3306
 export AMS_MYSQL_USER=<mysyql用户>
 export AMS_MYSQL_PASSWORD=<mysql密码>
-export AMS_MYSQL_DATABASE=ams
+export AMS_MYSQL_DATABASE=omo
 ```
 
 设置完环境变量后启动omo-msa-ams
