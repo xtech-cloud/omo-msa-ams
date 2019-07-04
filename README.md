@@ -6,7 +6,7 @@
 
 # 编译
 
-进入omo-msa-ams目录，执行compile.sh脚本
+进入omo-msa-ams目录，执行go build
 
 
 # 部署
@@ -51,7 +51,7 @@ export AMS_MYSQL_PASSWORD=<mysql密码>
 export AMS_MYSQL_DATABASE=ams
 ```
 
-设置完环境变量后启动ams
+设置完环境变量后启动omo-msa-ams
 
 # 测试工具
 
