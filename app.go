@@ -28,7 +28,7 @@ func main() {
 	if "" == auth.ISS {
 		auth.ISS = "ams"
 	}
-	auth.Secret = os.Getenv("AMS_Secret")
+	auth.Secret = os.Getenv("AMS_SECRET")
 	if "" == auth.Secret{
 		auth.Secret = "ams-secret"
 	}
