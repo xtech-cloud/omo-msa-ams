@@ -16,6 +16,8 @@ export GIN_MODE=release
 export AMS_HTTP_ADDR=:80
 export AMS_LOG_FILE=/var/log/ams.log
 export AMS_LOG_LEVEL=INFO
+export AMS_ISS=ams
+export AMS_SECRET=ams-secret
 ```
 
 - 密码加密

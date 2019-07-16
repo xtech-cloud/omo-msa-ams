@@ -24,6 +24,14 @@ func main() {
 	if "" == httpAddrArg {
 		httpAddrArg = ":80"
 	}
+	auth.ISS = os.Getenv("AMS_ISS")
+	if "" == auth.ISS {
+		auth.ISS = "ams"
+	}
+	auth.Secret = os.Getenv("AMS_Secret")
+	if "" == auth.Secret{
+		auth.Secret = "ams-secret"
+	}
 
 	router := gin.Default()
 

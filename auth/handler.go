@@ -17,6 +17,9 @@ type signin struct {
 
 var identityKey = "id"
 
+var ISS = "ams"
+var Secret = "ams-secret"
+
 type account struct {
 	ID string
 }
@@ -24,7 +27,7 @@ type account struct {
 func BindAuthHandler(_router *gin.Engine, _uri string, _group string) *gin.RouterGroup {
 	authMiddleware, err := jwt.New(&jwt.GinJWTMiddleware{
 		Realm:       "ams",
-		Key:         []byte("secret key"),
+		Key:         []byte(Secret),
 		Timeout:     time.Hour,
 		MaxRefresh:  time.Hour,
 		IdentityKey: identityKey,
@@ -33,6 +36,7 @@ func BindAuthHandler(_router *gin.Engine, _uri string, _group string) *gin.Route
 			if v, ok := data.(*account); ok {
 				return jwt.MapClaims{
 					identityKey: v.ID,
+					"iss": ISS,
 				}
 			}
 			return jwt.MapClaims{}
